@@ -1607,9 +1607,21 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 10482
       objectReference: {fileID: 0}
+    - target: {fileID: 5300585753340922405, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
+      propertyPath: _force
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5300585753340922406, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
       propertyPath: m_Mass
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300585753340922406, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
+      propertyPath: m_Constraints
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300585753340922406, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5300585754154857038, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
       propertyPath: m_Name

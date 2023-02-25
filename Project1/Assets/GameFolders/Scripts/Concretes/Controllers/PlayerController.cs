@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Project1.Inputs;
-
+using Project1.Movements;
 namespace Project1.Controllers
 {
     public class PlayerController : MonoBehaviour
     {
-        Rigidbody _rigidbody;
         DefaultInput _input;
         bool isForceUp;
         [SerializeField] private float _force;
+        private Mover _mover;
         private void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody>();
             _input = new DefaultInput();
+            _mover = new Mover(GetComponent<Rigidbody>());
         }
         private void Update()
         {
@@ -30,10 +30,7 @@ namespace Project1.Controllers
         }
         private void FixedUpdate()
         {
-            if(isForceUp)
-            {
-                _rigidbody.AddForce(Vector3.up*Time.deltaTime*_force,ForceMode.Force);
-            }
+            _mover.FixedTick();
         }
     }
 
