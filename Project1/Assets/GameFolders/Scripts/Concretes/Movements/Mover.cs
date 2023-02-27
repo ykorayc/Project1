@@ -8,17 +8,17 @@ namespace Project1.Movements
     public class Mover
     {
         Rigidbody _rigidbody;
+        PlayerController _playerController;
 
-        public Mover(Rigidbody rigidbody)
+        public Mover(PlayerController playerController)
         {
-            _rigidbody = rigidbody;
+            _playerController = playerController;
+            _rigidbody = playerController.GetComponent<Rigidbody>();
         }
-        
         public void FixedTick()
         {
-            _rigidbody.AddRelativeForce(Vector3.up*Time.deltaTime*75f);//Relative to our position.
+            _rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * _playerController._force);//Relative to our position.
         }
-    
     }
 }
 

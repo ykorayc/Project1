@@ -7,10 +7,12 @@ namespace Project1.Inputs
     {
         private DefaultAction _input;
         public bool isForceUp { get; private set; }
+        public float leftRight { get; private set; }
         public DefaultInput()
         {
             _input = new DefaultAction();
             _input.Rocket.MoveUp.performed += context => isForceUp = context.ReadValueAsButton();
+            _input.Rocket.LeftRight.performed += context => leftRight = context.ReadValue<float>();
             _input.Enable();
         }
     }
