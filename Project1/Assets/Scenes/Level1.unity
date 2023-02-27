@@ -728,7 +728,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1332
+  m_Name: pb_Mesh-33088
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1150,7 +1150,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1344
+  m_Name: pb_Mesh-33100
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1595,17 +1595,13 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1530704383}
-    - target: {fileID: 5300585752668073502, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5300585752668073571, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1530704383}
     - target: {fileID: 5300585752668073571, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
       propertyPath: m_VersionIndex
-      value: 7294
+      value: 7297
       objectReference: {fileID: 0}
     - target: {fileID: 5300585752964681252, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
       propertyPath: m_Mesh
@@ -1617,15 +1613,7 @@ PrefabInstance:
       objectReference: {fileID: 2146495591}
     - target: {fileID: 5300585752964681259, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
       propertyPath: m_VersionIndex
-      value: 10491
-      objectReference: {fileID: 0}
-    - target: {fileID: 5300585753340922405, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
-      propertyPath: TurnSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5300585753340922406, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
+      value: 10494
       objectReference: {fileID: 0}
     - target: {fileID: 5300585754154857038, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
       propertyPath: m_Name
@@ -1675,8 +1663,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5300585752668073570, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c830d738961dbf4ea6e5a234612fe0a, type: 3}
 --- !u!1001 &8594872367591541929
 PrefabInstance:
@@ -1688,10 +1675,6 @@ PrefabInstance:
     - target: {fileID: 8594872366674502104, guid: 1ca0c2d616ffbdc47945e9ab5dbceced, type: 3}
       propertyPath: m_Name
       value: GameCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 8594872366674502106, guid: 1ca0c2d616ffbdc47945e9ab5dbceced, type: 3}
-      propertyPath: field of view
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8594872366674502109, guid: 1ca0c2d616ffbdc47945e9ab5dbceced, type: 3}
       propertyPath: m_RootOrder
