@@ -5257,6 +5257,7 @@ GameObject:
   - component: {fileID: 5300585753340922406}
   - component: {fileID: 5300585753340922404}
   - component: {fileID: 5300585753340922405}
+  - component: {fileID: 3452893783202806092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5326,6 +5327,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurnSpeed: 35
   Force: 75
+--- !u!114 &3452893783202806092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300585754154857038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307771238ff7d144f953bc65f05b892c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFuel: 100
+  currentFuel: 0
+  _particle: {fileID: 5300585754451751709}
 --- !u!1001 &5300585754437201119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5406,5 +5422,10 @@ PrefabInstance:
 --- !u!4 &5300585754437596763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
+  m_PrefabInstance: {fileID: 5300585754437201119}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5300585754451751709 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19800002, guid: 1c20c7996d683754db1f0f62a361952c, type: 3}
   m_PrefabInstance: {fileID: 5300585754437201119}
   m_PrefabAsset: {fileID: 0}

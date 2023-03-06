@@ -10,11 +10,14 @@ namespace Project1.Controllers
         [SerializeField] float TurnSpeed=35f;
         [SerializeField] float Force=75f;
         DefaultInput _input;
-        bool isForceUp;
+        bool _canForceUp;
         public float _force => Force;
         Mover _mover;
         float _leftRight;
         Rotator _rotator;
+        Fuel _fuel;
+
+        
 
         public float _TurnSpeed => TurnSpeed;
 
@@ -23,17 +26,19 @@ namespace Project1.Controllers
             _input = new DefaultInput();
             _mover = new Mover(this);
             _rotator = new Rotator(this);
+            _fuel = GetComponent<Fuel>();
         }
         private void Update()
         {
            
-            if (_input.isForceUp)
+            if (_input.isForceUp && !_fuel.isEmpty)
             {
-                isForceUp = true;
+                _canForceUp = true;
             }
             else
             {
-                isForceUp = false;
+                _canForceUp = false;
+
             }
             _leftRight = _input.leftRight;
 
@@ -42,9 +47,14 @@ namespace Project1.Controllers
         {
 
             _rotator.FixedTick(_leftRight);
-            if (isForceUp)
+            if (_canForceUp)
             {
                 _mover.FixedTick();
+                _fuel.FuelDecrease(.2f);
+            }
+            if(!_canForceUp)
+            {
+                _fuel.FuelIncrease(.01f);
             }
 
             
