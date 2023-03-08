@@ -14,6 +14,7 @@ namespace Project1.Movements
         private void Awake()
         {
             currentFuel = maxFuel;
+            
         }
         public void FuelDecrease(float decrease)
         {
@@ -34,6 +35,7 @@ namespace Project1.Movements
             }
             
         }
+        
 
     }
 }
