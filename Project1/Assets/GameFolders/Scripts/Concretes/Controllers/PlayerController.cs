@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Project1.Inputs;
 using Project1.Movements;
+using Project1.Managers;
 namespace Project1.Controllers
 {
     public class PlayerController : MonoBehaviour
@@ -16,11 +17,17 @@ namespace Project1.Controllers
         float _leftRight;
         Rotator _rotator;
         Fuel _fuel;
-
-        
-
+        bool canMove;
         public float _TurnSpeed => TurnSpeed;
 
+        private void OnEnable()
+        {
+            GameManager._instance.OnGameOver += HandleOnEventTriggered;
+        }
+        private void OnDisable()
+        {
+            GameManager._instance.OnGameOver -= HandleOnEventTriggered;
+        }
         private void Awake()
         {
             _input = new DefaultInput();
@@ -28,9 +35,13 @@ namespace Project1.Controllers
             _rotator = new Rotator(this);
             _fuel = GetComponent<Fuel>();
         }
+        private void Start()
+        {
+            canMove = true;
+        }
         private void Update()
         {
-           
+            if (!canMove) return;
             if (_input.isForceUp && !_fuel.isEmpty)
             {
                 _canForceUp = true;
@@ -56,10 +67,17 @@ namespace Project1.Controllers
             {
                 _fuel.FuelIncrease(.01f);
             }
-
-            
-           
         }
+        
+            
+        private void HandleOnEventTriggered()
+        {
+            canMove = false;
+            _canForceUp = false;
+            _fuel.FuelIncrease(0f);
+            _leftRight = 0f;
+        }
+
     }
 
 }
