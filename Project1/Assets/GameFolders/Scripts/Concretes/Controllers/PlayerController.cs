@@ -22,11 +22,14 @@ namespace Project1.Controllers
 
         private void OnEnable()
         {
-            GameManager._instance.OnGameOver += HandleOnEventTriggered;
+            GameManager._instance.OnGameOver += HandleOnEventTriggered;  //Bu kýsým önemli. Çünkü bu kýsýmda instance aldýðýmýz için GameManager, PlayerController'dan
+                                                                         //önce oluþmalý. Bunu yapmak için de Script Execution Order'a bakmak zorundayýz.
+            GameManager._instance.OnMissionComplete += HandleOnEventTriggered;
         }
         private void OnDisable()
         {
-            GameManager._instance.OnGameOver -= HandleOnEventTriggered;
+            GameManager._instance.OnGameOver -= HandleOnEventTriggered;             //Farklý eventlere ayný metodlarý ekleyebiliriz.
+            GameManager._instance.OnMissionComplete -= HandleOnEventTriggered;  
         }
         private void Awake()
         {

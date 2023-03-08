@@ -16,6 +16,7 @@ namespace Project1.Controllers
             if (collision.GetContact(0).normal.y == -1)
             {
                 _FinishParticle.SetActive(true);
+                GameManager._instance.MissionComplete();
             }
             else
             {
