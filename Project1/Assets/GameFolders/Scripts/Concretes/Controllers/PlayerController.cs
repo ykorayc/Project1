@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Project1.Inputs;
 using Project1.Movements;
@@ -18,17 +19,19 @@ namespace Project1.Controllers
         Rotator _rotator;
         Fuel _fuel;
         bool canMove;
+
+        public bool _canMove =>canMove;
         public float _TurnSpeed => TurnSpeed;
 
         private void OnEnable()
         {
-            GameManager._instance.OnGameOver += HandleOnEventTriggered;  //Bu kýsým önemli. Çünkü bu kýsýmda instance aldýðýmýz için GameManager, PlayerController'dan
-                                                                         //önce oluþmalý. Bunu yapmak için de Script Execution Order'a bakmak zorundayýz.
+            GameManager._instance.OnGameOver += HandleOnEventTriggered;  //Bu kï¿½sï¿½m ï¿½nemli. ï¿½ï¿½nkï¿½ bu kï¿½sï¿½mda instance aldï¿½ï¿½ï¿½mï¿½z iï¿½in GameManager, PlayerController'dan
+                                                                         //ï¿½nce oluï¿½malï¿½. Bunu yapmak iï¿½in de Script Execution Order'a bakmak zorundayï¿½z.
             GameManager._instance.OnMissionComplete += HandleOnEventTriggered;
         }
         private void OnDisable()
         {
-            GameManager._instance.OnGameOver -= HandleOnEventTriggered;             //Farklý eventlere ayný metodlarý ekleyebiliriz.
+            GameManager._instance.OnGameOver -= HandleOnEventTriggered;             //Farklï¿½ eventlere aynï¿½ metodlarï¿½ ekleyebiliriz.
             GameManager._instance.OnMissionComplete -= HandleOnEventTriggered;  
         }
         private void Awake()

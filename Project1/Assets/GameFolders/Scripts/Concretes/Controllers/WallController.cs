@@ -10,7 +10,7 @@ namespace Project1.Controllers
         private void OnCollisionEnter(Collision collision)
         {
             PlayerController _playerController = collision.gameObject.GetComponent<PlayerController>();
-            if(_playerController!=null)
+            if(_playerController!=null && _playerController._canMove)
             {
                 // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 GameManager._instance.GameOver();
